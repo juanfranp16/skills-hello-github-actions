@@ -10,5 +10,5 @@ jobs:
       - name: Label pr when approved
         uses: tiagonapoli/label-pr-on-merge@v0.0.2
         with:
-          merged_label: "mergeau"
-          branch: "main"
+          merged-label-name: "mergeau"
+          target-branch: "main"
