@@ -1,13 +1,14 @@
 name: Approved pull request
 
-on: pull_request_review
+on:
+  pull_request:
+    types: closed
 jobs:
   tag-pr:
     runs-on: ubuntu-latest
     steps:
       - name: Label pr when approved
-        uses: pullreminders/label-when-approved-action@main
-        env:
-          APPROVALS: "1"
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          ADD_LABEL: "approved"
+        uses: tiagonapoli/label-pr-on-merge@v0.0.2
+        with:
+          merged_label: "mergeau"
+          branch: "main"
